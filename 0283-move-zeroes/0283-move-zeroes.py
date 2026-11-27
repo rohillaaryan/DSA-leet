@@ -3,12 +3,11 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        l = len(nums)
+        l = nums.count(0)
         i = 0
         while i < l:
-            if nums[i] == 0:
-                nums.remove(0)
-                nums.append(0)
+            nums.remove(0)
+            nums.append(0)
             i+=1
 
 # Synced seamlessly with LeetHub Pro
