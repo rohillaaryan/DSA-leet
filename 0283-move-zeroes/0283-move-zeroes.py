@@ -1,23 +1,15 @@
-class Solution(object):
-    def moveZeroes(self, nums):
+class Solution:
+    def moveZeroes(self, nums: list[int]) -> None:
         """
-        :type nums: List[int]
-        :rtype: None Do not return anything, modify nums in-place instead.
+        Do not return anything, modify nums in-place instead.
         """
-        c=nums.count(0)
-
-        for i in range(len(nums)):
-            try:
-                found = nums.index(0)
-                nums.pop(found)
-            except ValueError:
-                continue
-        
-        for i in range(c):
-            nums.append(0)
-        
-        return nums
-        
+        l = len(nums)
+        i = 0
+        while i < l:
+            if nums[i] == 0:
+                nums.remove(0)
+                nums.append(0)
+            i+=1
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
